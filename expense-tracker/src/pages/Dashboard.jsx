@@ -117,8 +117,9 @@ export default function Dashboard() {
       docs.sort((a, b) => b.date?.toDate?.() - a.date?.toDate?.());
       setExpenses(docs);
     } catch (e) {
-      addToast("Failed to load transactions.", "error");
-    } finally {
+  console.error(e);
+  addToast("Failed to load transactions.", "error");
+} finally {
       setLoading(false);
     }
   };
